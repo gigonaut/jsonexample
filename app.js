@@ -18,17 +18,16 @@ app.configure(function(){
   app.use(express.static(__dirname + '/public'));
 });
 
-var simpleJson = {
-	name: 'simple stuff in json',
-	requestedAt: new Date(),
-	value: 7,
-	hash: {one: 1, two: 2, three: 3},
-	array: [1, 2, 3]
-}
-
 // Routes
 
 app.get('/', function(req, res){
+	var simpleJson = {
+		name: 'simple stuff in json',
+		requestedAt: new Date(),
+		value: 7,
+		hash: {one: 1, two: 2, three: 3},
+		array: [1, 2, 3]
+	}
 	res.contentType('application/json');
 	res.send(simpleJson);
 });
